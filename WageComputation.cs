@@ -2,27 +2,34 @@ namespace MyApp
 {
     class WageComputation
     {
-        static int wagePerHour = 20;
-        static WageComputation()
+        String companyName;
+        int wagePerHour;
+        int workingDaysAMonth;
+        int maxHoursAMonth;
+        public WageComputation(String _name,int _wagePerHour,int _workingDaysAMonth,int _maxHoursAMonth)
         {
-             Console.WriteLine("Welcome to Employee Wage Computation");
+            Console.WriteLine("Welcome to Employee Wage Computation");
+            companyName = _name;
+            wagePerHour = _wagePerHour;
+            workingDaysAMonth = _workingDaysAMonth;
+            maxHoursAMonth = _maxHoursAMonth;
         }
 
-        public static void DailyWage()
+        public void DailyWage()
         {    
-            Console.WriteLine("Daily wage is " + _DailyWage());
+            Console.WriteLine(companyName +": Daily wage is " + _DailyWage());
         }
-        public static void MonthlyWage()
+        public void MonthlyWage()
         {
             int wageSum = 0;
             for(int i=0;i<20;i++)
             {
                 wageSum+= _DailyWage();
             }
-            Console.WriteLine("Monthly wage is " + wageSum);
+            Console.WriteLine(companyName +": Monthly wage is " + wageSum);
         }
 
-        public static void conditionalMonthlyWage()
+        public void conditionalMonthlyWage()
         {
             int wageSum = 0;
             int hours = 0;
@@ -33,14 +40,14 @@ namespace MyApp
                 if(hours>100)
                     break;
             }
-            Console.WriteLine("Conditional Monthly wage is " + wageSum);
+            Console.WriteLine(companyName +": Conditional Monthly wage is " + wageSum);
         }
 
-        private static int _DailyWage()
+        private int _DailyWage()
         {
             return _DailyWage(out int workHours);
         }
-        private static int _DailyWage(out int workHours)
+        private int _DailyWage(out int workHours)
         {
             Random random = new Random();
             int rand = random.Next(0,3);
@@ -66,8 +73,5 @@ namespace MyApp
             int wage = wagePerHour*workHours;
             return wage;
         }
-
-
-
     }
 }

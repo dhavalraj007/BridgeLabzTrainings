@@ -6,15 +6,31 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            WageComputation.DailyWage();
-            WageComputation.MonthlyWage();
-            WageComputation.conditionalMonthlyWage();
+            // WageComputation GEwageComputation = new WageComputation("GE", 40, 20, 100);
+            // GEwageComputation.DailyWage();
+            // GEwageComputation.MonthlyWage();
+            // GEwageComputation.conditionalMonthlyWage();
 
-            System.Console.WriteLine(LineCompare.LineLength(1,2,3,4));
-            System.Console.WriteLine(LineCompare.AreLinesEqual(1,2,3,4,1,2,3,4));
-            LineCompare.WhichIsGreater(1,2,3,4,2,3,4,5); 
+            // System.Console.WriteLine("");
 
-            
+            // WageComputation RelianceWageComputation = new WageComputation("Reliance", 20, 30, 140);
+            // RelianceWageComputation.DailyWage();
+            // RelianceWageComputation.MonthlyWage();
+            // RelianceWageComputation.conditionalMonthlyWage();
+
+
+            //uncomment this to play Snake and Ladder.
+            SnakeLadder sl = new SnakeLadder();
+            while (!sl.finished)
+            {
+                System.Console.WriteLine("\nPlayer 1's turn. Press Enter to Roll and Move.");
+                Console.ReadLine();
+                sl.Player1RollMove();
+                if (sl.finished) break;
+                System.Console.WriteLine("\nPlayer 2's turn. Press Enter to Roll and Move.");
+                Console.ReadLine();
+                sl.Player2RollMove();
+            }
         }
     }
 }
