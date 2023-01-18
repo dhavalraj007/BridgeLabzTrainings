@@ -2,33 +2,52 @@ using System;
 
 namespace MyApp
 {
-    class LineCompare
-    {
-        static LineCompare()
-        {
-            Console.WriteLine("Welcome to Line Comparison");
-        }
 
-        public static double LineLength(int x1,int y1,int x2,int y2)
+    class Line:IComparable<Line>
+    {
+        private int x1;
+        private int y1;
+        private int x2;
+        private int y2;
+
+        public Line(int x1,int y1,int x2,int y2)
+        {
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+        }
+        public double Length()
         {
             return Math.Sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
         }
-
-        public static bool AreLinesEqual(int x11,int y11,int x12,int y12,int x21,int y21,int x22,int y22)
+        public int CompareTo(Line? other)
         {
-            return x11==x21 && x12==x22 && y11==y21 && y12==y22;
+            if(other==null) return 1; // if other is null consider it smaller than this
+            return this.Length().CompareTo(other.Length());
         }
 
-        public static void WhichIsGreater(int x11,int y11,int x12,int y12,int x21,int y21,int x22,int y22)
+        public static bool operator> (Line l1,Line l2)
         {
-            double line1 = LineLength(x11,y11,x12,y12);
-            double line2 = LineLength(x21,y21,x22,y22);
-            if(line1>line2)
-                Console.WriteLine("Line 1 is greater");
-            else if(line1<line2)
-                Console.WriteLine("Line 2 is Greater");
-            else
-                Console.WriteLine("Lines are Same");
+            return l1.CompareTo(l2)>0;
+        }
+
+        public static bool operator>= (Line l1,Line l2)
+        {
+            return l1.CompareTo(l2)>=0;
+        }
+        public static bool operator< (Line l1,Line l2)
+        {
+            return l1.CompareTo(l2)<0;
+        }
+        public static bool operator<= (Line l1,Line l2)
+        {
+            return l1.CompareTo(l2)<=0;
+        }
+
+        public override string ToString()
+        {
+            return $"Line: ({x1},{y1}) , ({x2},{y2}) with Length {this.Length()}";
         }
     }
 }

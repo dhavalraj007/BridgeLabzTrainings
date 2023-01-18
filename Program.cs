@@ -5,32 +5,44 @@ namespace MyApp
     class Program
     {
         static void Main(string[] args)
-        {
-            // WageComputation GEwageComputation = new WageComputation("GE", 40, 20, 100);
-            // GEwageComputation.DailyWage();
-            // GEwageComputation.MonthlyWage();
-            // GEwageComputation.conditionalMonthlyWage();
-
-            // System.Console.WriteLine("");
-
-            // WageComputation RelianceWageComputation = new WageComputation("Reliance", 20, 30, 140);
-            // RelianceWageComputation.DailyWage();
-            // RelianceWageComputation.MonthlyWage();
-            // RelianceWageComputation.conditionalMonthlyWage();
-
-
-            //uncomment this to play Snake and Ladder.
-            SnakeLadder sl = new SnakeLadder();
-            while (!sl.finished)
+        {   
+            EmpWageBuilder builder = new EmpWageBuilder();
+            builder.addCompany("GE", 40, 20, 100);
+            builder.addCompany("Reliance", 20, 30, 140);
+            builder.ComputeConditionalMonthlyWage();
+            
+            //Total  wages by company name
+            System.Console.WriteLine("Total Wage for GE: "+builder.GetTotalWage("GE"));
+            System.Console.WriteLine("Total Wage for Reliace: "+builder.GetTotalWage("Reliance"));
+            //daily wages by company name
+            var compDailywage = builder.GetDailyWages("GE");
+            for(int day=0;day<compDailywage.Count();day++)
             {
-                System.Console.WriteLine("\nPlayer 1's turn. Press Enter to Roll and Move.");
-                Console.ReadLine();
-                sl.Player1RollMove();
-                if (sl.finished) break;
-                System.Console.WriteLine("\nPlayer 2's turn. Press Enter to Roll and Move.");
-                Console.ReadLine();
-                sl.Player2RollMove();
+                System.Console.WriteLine("Wage for Day #"+day+" is "+compDailywage[day]);
             }
+
+
+            System.Console.WriteLine("\n\n");
+
+            //Line comparison OOP approach
+            Line line1 = new Line(1,2,4,5);
+            Line line2 = new Line(1,2,3,4);
+            if(line1>line2)
+                Console.WriteLine("Line 1 is greater");
+            else if(line1<line2)
+                Console.WriteLine("Line 2 is Greater");
+            else
+                Console.WriteLine("Lines are Same");
+            
+            
+            //Sorting Lines
+            Line line3 = new Line(1,2,5,6);
+            Line line4 = new Line(1,1,10,10);
+            List<Line> list = new List<Line>{line1,line2,line3,line4};
+            list.Sort();    //uses CompareTo
+            System.Console.WriteLine("\n\nSorted List of Lines according to Length");
+            foreach(var line in list)
+                System.Console.WriteLine(line.ToString());
         }
     }
 }
