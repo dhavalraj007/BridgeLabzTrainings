@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Training\\Day1\\MyApp\\MyApp.csproj": {}
+    "C:\\Files\\dev\\BLTrainings\\New folder\\BridgeLabzTrainings\\MyApp.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Training\\Day1\\MyApp\\MyApp.csproj": {
+    "C:\\Files\\dev\\BLTrainings\\New folder\\BridgeLabzTrainings\\MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Training\\Day1\\MyApp\\MyApp.csproj",
+        "projectUniqueName": "C:\\Files\\dev\\BLTrainings\\New folder\\BridgeLabzTrainings\\MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "C:\\dev\\Training\\Day1\\MyApp\\MyApp.csproj",
-        "packagesPath": "C:\\Users\\223089465\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Training\\Day1\\MyApp\\obj\\",
+        "projectPath": "C:\\Files\\dev\\BLTrainings\\New folder\\BridgeLabzTrainings\\MyApp.csproj",
+        "packagesPath": "C:\\Users\\Dhava\\.nuget\\packages\\",
+        "outputPath": "C:\\Files\\dev\\BLTrainings\\New folder\\BridgeLabzTrainings\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\223089465\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dhava\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
