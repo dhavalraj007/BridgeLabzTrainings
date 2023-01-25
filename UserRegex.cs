@@ -65,26 +65,16 @@ namespace MyApp
         }
 
     }
-    class UserRegex
+    public class UserRegex
     {
         
-        public static bool ValidName(string fn)
-        {
-            return Regex.IsMatch(fn, "^[A-Z][A-Za-z]{2,}");
-        }
+        public static bool ValidName(string fn) => Regex.IsMatch(fn, "^[A-Z][A-Za-z]{2,}");
 
-        public static bool ValidPhoneNumber(string phoneNumber)
-        {
-            return Regex.IsMatch(phoneNumber, "^[0-9]{2}\\s[0-9]{10}");
-        }
-
-        public static bool ValidEmail(string email)
-        {
-            return Regex.IsMatch(email, "^[A-Za-z0-9]+[.]?[A-Za-z0-9]+@bl.co[.]?[A-Za-z]*");
-        }
-        public static bool ValidPassword(string password)
-        {
-            return Regex.IsMatch(password, "^(?=.*[A-Z])(?=.*\\d)(?=[^\\W]*[\\W][^\\W]*$)(?=.{8,}$)");
-        }
+        public static bool ValidPhoneNumber(string phoneNumber) => Regex.IsMatch(phoneNumber, "^[0-9]{2}\\s[0-9]{10}");
+        
+        public static bool ValidEmail(string email) => Regex.IsMatch(email, "^[A-Za-z0-9]+[.]?[A-Za-z0-9]+@bl.co[.]?[A-Za-z]*");
+        
+        public static bool ValidPassword(string password) => Regex.IsMatch(password, "^(?=.*[A-Z])(?=.*\\d)(?=[^\\W]*[\\W][^\\W]*$)(?=.{8,}$)");
+        
     }
 }

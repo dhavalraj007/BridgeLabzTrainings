@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MyApp
@@ -50,11 +51,14 @@ namespace MyApp
         }
 
     }
-    class Person
+
+    [Serializable]
+    public class Person
     {
-        public int SSN;
-        public string Name,Address;
-        public int Age;
+        public int SSN { get; set; }
+        public string Name { get; set; }
+        public string Address{get;set;}
+        public int Age { get; set; }
 
         public Person()
         {
